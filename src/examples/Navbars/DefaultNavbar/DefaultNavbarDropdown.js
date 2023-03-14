@@ -20,8 +20,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 // @mui material components
-import Collapse from "@mui/material/Collapse";
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+//import Collapse from "@mui/material/Collapse";
+// import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
@@ -85,14 +85,14 @@ function DefaultNavbarDropdown({
           {/* <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
             {collapse && "keyboard_arrow_down"}
           </Icon> */}
-          <KeyboardDoubleArrowDownIcon sx={{ fontWeight: "normal", verticalAlign: "middle" }}/>
+          {/* <KeyboardDoubleArrowDownIcon sx={{ fontWeight: "normal", verticalAlign: "middle" }}/> */}
         </MKTypography>
       </MKBox>
-      {children && (
+      {/* {children && (
         <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
           {children}
         </Collapse>
-      )}
+      )} */}
     </>
   );
 }
