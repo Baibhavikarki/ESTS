@@ -8,7 +8,7 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
 import MKTypography from "../../../components/MKTypography";
-import MKButton from "../../../components/MKButton";
+// import MKButton from "../../../components/MKButton";
 
 // Routes
 import routes from "../../../routes";
@@ -20,10 +20,7 @@ import DefaultFooter from "../../../examples/Footers/DefaultFooter";
 
 // Images
 import bgImage from "../../../assets/images/bg-about.jpg";
-import team1 from "../../../assets/images/team-5.jpg";
-import team2 from "../../../assets/images/bruce-mars.jpg";
-import team3 from "../../../assets/images/ivana-squares.jpg";
-import team4 from "../../../assets/images/ivana-square.jpg";
+import team1 from "../../../assets/images/profile.jpg";
 
 function HorizontalTeamCard({ image, name, position, description }) {
   return (
@@ -200,7 +197,7 @@ function AboutUs() {
                 },
               })}
             >
-              Work with an amazing design
+              Our Story
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -209,10 +206,9 @@ function AboutUs() {
               mt={1}
               mb={3}
             >
-              We&apos;re constantly trying to express ourselves and actualize
-              our dreams. If you have the opportunity to play this game
+              As we confront the dual crises of biodiversity loss and climate change, We are working to protect our planet.
             </MKTypography>
-            <MKButton
+            {/* <MKButton
               color="default"
               sx={{ color: ({ palette: { dark } }) => dark.main }}
             >
@@ -220,7 +216,7 @@ function AboutUs() {
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
-            </MKTypography>
+            </MKTypography> */}
             <MKBox display="flex" justifyContent="center" alignItems="center">
               <MKTypography
                 component="a"
@@ -270,7 +266,7 @@ function AboutUs() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <MKBox component="section" py={12}>
+        {/* <MKBox component="section" py={12}>
           <Container>
             <Grid container spacing={3} alignItems="center">
               <Grid item xs={12} lg={6}>
@@ -313,12 +309,9 @@ function AboutUs() {
                   </Grid>
                 </Grid>
               </Grid>
-              {/* <Grid item xs={12} lg={4} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
-            
-          </Grid> */}
             </Grid>
           </Container>
-        </MKBox>
+        </MKBox> */}
 
         {/** Infomation Ends */}
 
@@ -337,10 +330,10 @@ function AboutUs() {
                 <MKTypography variant="h3" color="white">
                   The Executive Team
                 </MKTypography>
-                <MKTypography variant="body2" color="white" opacity={0.8}>
+                {/* <MKTypography variant="body2" color="white" opacity={0.8}>
                   There&apos;s nothing I really wanted to do in life that I
                   wasn&apos;t able to get good at. That&apos;s my skill.
-                </MKTypography>
+                </MKTypography> */}
               </Grid>
             </Grid>
             <Grid container spacing={3}>
@@ -348,39 +341,39 @@ function AboutUs() {
                 <MKBox mb={1}>
                   <HorizontalTeamCard
                     image={team1}
-                    name="Emma Roberts"
-                    position={{ color: "info", label: "UI Designer" }}
-                    description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                    name="Baibhavi Karki"
+                    position={{ color: "info", label: "Team Lead" }}
+                    description="A team leader is a person who provides guidance, instruction, direction and leadership to a group of individuals (the team)."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} lg={6}>
                 <MKBox mb={1}>
                   <HorizontalTeamCard
-                    image={team2}
-                    name="William Pearce"
-                    position={{ color: "info", label: "Boss" }}
-                    description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-                  />
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={{ xs: 1, lg: 0 }}>
-                  <HorizontalTeamCard
-                    image={team3}
-                    name="Ivana Flow"
-                    position={{ color: "info", label: "Athlete" }}
-                    description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-                  />
-                </MKBox>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <MKBox mb={{ xs: 1, lg: 0 }}>
-                  <HorizontalTeamCard
-                    image={team4}
-                    name="Marquez Garcia"
+                    image={team1}
+                    name="Chahat Kaur Chabbra"
                     position={{ color: "info", label: "JS Developer" }}
-                    description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                    description="JavaScript developers work with websites, producing front-end applications, and performing code analysis and overall improvement of style and usability."
+                  />
+                </MKBox>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <MKBox mb={{ xs: 1, lg: 0 }}>
+                  <HorizontalTeamCard
+                    image={team1}
+                    name="Swara Patel"
+                    position={{ color: "info", label: "JS Developer" }}
+                    description="JavaScript developers work with websites, producing front-end applications, and performing code analysis and overall improvement of style and usability."
+                  />
+                </MKBox>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <MKBox mb={{ xs: 1, lg: 0 }}>
+                  <HorizontalTeamCard
+                    image={team1}
+                    name="Rugma Muraleedharan Sandhya"
+                    position={{ color: "info", label: "UI Designer" }}
+                    description="Design all the screens through which a user will move and to create the visual elements—and their interactive properties—that facilitate this movement."
                   />
                 </MKBox>
               </Grid>

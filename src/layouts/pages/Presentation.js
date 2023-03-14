@@ -215,38 +215,40 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
               <Grid item xs={12} lg={4}>
                 <FilledInfoCard
                   variant="gradient"
-                  color="info"
-                  title="Getting Started"
-                  description="Check the possible ways of working with our product and the necessary files for building your own project."
-                  action={{
+                  color="warning"
+                  title="Pollution"
+                  description="Ecosystems can be exposed to many types of pollutants. From agricultural and industrial runoff to microplastics, contaminants can harm or kill plants and wildlife."
+                  /* action={{
                     type: "external",
                     route: "https://www.creative-tim.com/learning-lab/react/overview/material-kit/",
                     label: "Let's start",
-                  }}
+                  }} */
                 />
               </Grid>
               <Grid item xs={12} lg={4}>
                 <FilledInfoCard
-                  color="info"
-                  title="Plugins"
-                  description="Get inspiration and have an overview about the plugins that we used to create the Material Kit."
-                  action={{
+                  variant="gradient"
+                  color="warning"
+                  title="Climate Change"
+                  description="In Canada, the rate of warming has increased to nearly double the global average. A rapidly changing climate can make it more difficult for species to find food or migrate."
+                  /* action={{
                     type: "external",
                     route: "https://www.creative-tim.com/learning-lab/react/overview/datepicker/",
                     label: "Read more",
-                  }}
+                  }} */
                 />
               </Grid>
               <Grid item xs={12} lg={4}>
                 <FilledInfoCard
-                  color="info"
-                  title="Components"
-                  description="Material Kit is giving you a lot of pre-made components, that will help you to build UI's faster."
-                  action={{
+                  variant="gradient"
+                  color="warning"
+                  title="Unsustainable Harvest"
+                  description="Over-exploitation of wildlife can be direct, such as unsustainable hunting, harvesting and poaching, or indirect, including bycatch. Some even prey on native species."
+                  /* action={{
                     type: "external",
                     route: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
                     label: "Read more",
-                  }}
+                  }} */
                 />
               </Grid>
             </Grid>
