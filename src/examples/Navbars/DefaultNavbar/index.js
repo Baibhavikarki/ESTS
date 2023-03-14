@@ -24,12 +24,16 @@ import PropTypes from "prop-types";
 
 // @mui material components
 import Container from "@mui/material/Container";
-import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
 import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
@@ -264,12 +268,8 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               item.name
             )}
             {item.collapse && (
-              <Icon
-                fontSize="small"
-                sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}
-              >
-                keyboard_arrow_right
-              </Icon>
+              <KeyboardArrowRightIcon fontSize="small"
+              sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}/>
             )}
           </MKTypography>
         );
@@ -315,9 +315,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
         >
           <MKBox borderRadius="lg">
             <MKTypography variant="h1" color="white">
-              <Icon ref={setArrowRef} sx={{ mt: -3 }}>
-                arrow_drop_up
-              </Icon>
+              <ArrowDropUpIcon ref={setArrowRef} sx={{ mt: -3 }}/>
             </MKTypography>
             <MKBox shadow="lg" borderRadius="lg" p={2} mt={2}>
               {renderRoutes}
@@ -396,12 +394,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                       item.name
                     )}
                     {item.collapse && (
-                      <Icon
-                        fontSize="small"
-                        sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}
-                      >
-                        keyboard_arrow_right
-                      </Icon>
+                      <KeyboardArrowRightIcon fontSize="small" sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}/>
                     )}
                   </MKTypography>
                 );
@@ -531,7 +524,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             sx={{ cursor: "pointer" }}
             onClick={openMobileNavbar}
           >
-            <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
+            {mobileNavbar ? <CloseIcon fontSize="default"/> : <MenuIcon fontSize="default"/>}
           </MKBox>
         </MKBox>
         <MKBox

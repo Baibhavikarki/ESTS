@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 
 // @mui material components
 import Collapse from "@mui/material/Collapse";
-import Icon from "@mui/material/Icon";
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
@@ -82,9 +82,10 @@ function DefaultNavbarDropdown({
           {name}
         </MKTypography>
         <MKTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
-          <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
+          {/* <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
             {collapse && "keyboard_arrow_down"}
-          </Icon>
+          </Icon> */}
+          <KeyboardDoubleArrowDownIcon sx={{ fontWeight: "normal", verticalAlign: "middle" }}/>
         </MKTypography>
       </MKBox>
       {children && (
