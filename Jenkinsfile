@@ -1,29 +1,41 @@
 pipeline {
     agent any
 
+    environment {
+        CI = 'true'
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Baibhavikarki/ESTS.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                // Add build commands for your project here
+                sh 'npm run build'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing the project...'
-                // Add test commands for your project here
+                sh 'npm test'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project...'
-                // Add deployment commands for your project here
-            }
-        }
+
+        // Add additional stages for deployment or other tasks as needed
     }
-    post{
-        always{
-            emailext body: 'Deployment has been successful. ', subject: 'Pipeline Status', to: 'bkarki8@myseneca.ca'
+
+    post {
+        always {
+            deleteDir() // Clean up the workspace after the pipeline finishes
         }
     }
 }
