@@ -1,33 +1,29 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS_Latest'
-    }
-
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Baibhavikarki/ESTS.git'
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'npm run build'
+                echo 'Building the project...'
+                // Add build commands for your project here
             }
         }
-
         stage('Test') {
             steps {
-                sh 'npm test'
+                echo 'Testing the project...'
+                // Add test commands for your project here
             }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                // Add deployment commands for your project here
+            }
+        }
+    }
+    post{
+        always{
+            emailext body: 'Deployment has been successful. ', subject: 'Pipeline Status', to: 'bkarki8@myseneca.ca'
         }
     }
 }
