@@ -21,4 +21,9 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            emailext body: 'Deployment has been successful. ', subject: 'Pipeline Status', to: 'bkarki8@myseneca.ca'
+        }
+    }
 }
