@@ -343,7 +343,7 @@ function AboutUs() {
                     image={team1}
                     name="Baibhavi Karki"
                     position={{ color: "info", label: "Team Lead" }}
-                    description="A team leader is a person who provides guidance, instruction, direction and leadership to a group of individuals (the team)."
+                    description="A team leader is a person who provides guidance, instruction, direction and leadership to a group of individuals."
                   />
                 </MKBox>
               </Grid>
