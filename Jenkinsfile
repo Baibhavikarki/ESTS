@@ -14,5 +14,11 @@ pipeline {
                 // Add test commands for your project here
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                // Add deployment commands for your project here
+            }
+        }
     }
 }
