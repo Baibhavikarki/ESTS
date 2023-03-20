@@ -1,29 +1,33 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_Latest'
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'your-git-credentials-id', url: 'https://github.com/your-username/your-repo.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                // Add build commands for your project here
+                sh 'npm run build'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing the project...'
-                // Add test commands for your project here
+                sh 'npm test'
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project...'
-                // Add deployment commands for your project here
-            }
-        }
-    }
-    post{
-        always{
-            emailext body: 'Deployment has been successful. ', subject: 'Pipeline Status', to: 'bkarki8@myseneca.ca'
         }
     }
 }
