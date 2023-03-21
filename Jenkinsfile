@@ -1,17 +1,32 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_Latest'
+    }
+
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building the project...'
-                // Add build commands for your project here
+                git branch: 'main', url: 'https://github.com/Baibhavikarki/ESTS.git'
             }
         }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+      
         stage('Test') {
             steps {
-                echo 'Testing the project...'
-                // Add test commands for your project here
+                echo 'test succesfull '
             }
         }
     }
