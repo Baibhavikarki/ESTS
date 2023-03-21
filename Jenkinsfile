@@ -23,7 +23,11 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
+        stage('Lint') {
+            steps {
+                sh 'npm run lint'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'test succesfull '
