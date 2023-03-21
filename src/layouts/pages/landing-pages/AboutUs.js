@@ -341,7 +341,7 @@ function AboutUs() {
                 <MKBox mb={1}>
                   <HorizontalTeamCard
                     image={team1}
-                    name="Baibhavi"
+                    name="Baibhavi Karki"
                     position={{ color: "info", label: "Team Lead" }}
                     description="A team leader is a person who provides guidance, instruction, direction and leadership to a group of individuals."
                   />
@@ -371,7 +371,7 @@ function AboutUs() {
                 <MKBox mb={{ xs: 1, lg: 0 }}>
                   <HorizontalTeamCard
                     image={team1}
-                    name="Rugma"
+                    name="Rugma Muraleedharan Sandhya"
                     position={{ color: "info", label: "UI/UX Designer" }}
                     description="Design all the screens through which a user will move and to create the visual elements—and their interactive properties—that facilitate this movement."
                   />
