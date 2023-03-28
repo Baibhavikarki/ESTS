@@ -10,6 +10,10 @@ import AboutUs from "./layouts/pages/landing-pages/AboutUs";
 import ContactUs from "./layouts/pages/landing-pages/ContactUs";
 import SignIn from "./layouts/pages/authentication/SignIn";
 import Home from "./layouts/pages/Presentation";
+import Dashboard from "./layouts/pages/admin-dashboard/Dashboard";
+import Animals from "./layouts/pages/admin-dashboard/Animals";
+import Locations from './layouts/pages/admin-dashboard/Locations';
+import UserRequest from './layouts/pages/admin-dashboard/UserRequest';
 
 const routes = [
     {
@@ -34,7 +38,7 @@ const routes = [
       columns: 1,
       rowsPerColumn: 2,
       route: "/pages/landing-pages/contact-us",
-              component: <ContactUs />,
+      component: <ContactUs />,
     },
     {
       icon: <LockOpenIcon />,
@@ -42,6 +46,30 @@ const routes = [
       route: "/pages/authentication/sign-in",
       component: <SignIn />,
     },
+    {
+      icon: <LockOpenIcon />,
+      name: "dashboard",
+      route: "/pages/admin-dashboard/dashboard",
+      component: <Dashboard />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "animals",
+      route: "/pages/admin-dashboard/animals",
+      component: <Animals />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "locations",
+      route: "/pages/admin-dashboard/locations",
+      component: <Locations />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "UserRequest",
+      route: "/pages/admin-dashboard/UserRequest",
+      component: <UserRequest />,
+    }
   ];
   
   export default routes;
