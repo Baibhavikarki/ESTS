@@ -19,9 +19,9 @@ import footerRoutes from "../../../footer.routes";
 import bgImage from "../../../assets/images/illustrations/illustration-reset.jpg";
 
 
-const homeRoutes = routes.filter((route) => {
-  return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
-});
+// const homeRoutes = routes.filter((route) => {
+//   return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+// });
 
 
 function ContactUs() {
@@ -29,7 +29,7 @@ function ContactUs() {
       <>
         <MKBox position="fixed" top="0.5rem" width="100%">
           <DefaultNavbar
-            routes={homeRoutes}
+            routes={routes}
           />
         </MKBox>
         <Grid container spacing={3} alignItems="center">

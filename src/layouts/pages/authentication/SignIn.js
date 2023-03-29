@@ -52,14 +52,14 @@ function SignInBasic() {
     }
   };
 
-  const homeRoutes = routes.filter((route) => {
-    return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
-  });
+  // const homeRoutes = routes.filter((route) => {
+  //   return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+  // });
 
   return (
     <>
       { <DefaultNavbar
-        routes={homeRoutes}
+        routes={routes}
         transparent
         light
       /> }

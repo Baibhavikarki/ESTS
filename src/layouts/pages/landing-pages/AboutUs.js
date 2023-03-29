@@ -155,14 +155,14 @@ DefaultInfoCard.propTypes = {
   small: PropTypes.bool,
 };
 
-const homeRoutes = routes.filter((route) => {
-  return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
-});
+// const homeRoutes = routes.filter((route) => {
+//   return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+// });
 
 function AboutUs() {
   return (
     <>
-      <DefaultNavbar routes={homeRoutes} transparent light />
+      <DefaultNavbar routes={routes} transparent light />
       <MKBox
         minHeight="75vh"
         width="100%"
