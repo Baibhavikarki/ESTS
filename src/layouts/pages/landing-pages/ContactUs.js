@@ -18,12 +18,18 @@ import footerRoutes from "../../../footer.routes";
 // Image
 import bgImage from "../../../assets/images/illustrations/illustration-reset.jpg";
 
+
+const homeRoutes = routes.filter((route) => {
+  return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+});
+
+
 function ContactUs() {
     return (
       <>
         <MKBox position="fixed" top="0.5rem" width="100%">
           <DefaultNavbar
-            routes={routes}
+            routes={homeRoutes}
           />
         </MKBox>
         <Grid container spacing={3} alignItems="center">

@@ -158,10 +158,14 @@ FilledInfoCard.propTypes = {
   ]),
 };
 
+const homeRoutes = routes.filter((route) => {
+  return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+});
+
 function Presentation() {
   return (
     <>
-      <DefaultNavbar routes={routes} sticky />
+      <DefaultNavbar routes={homeRoutes} sticky />
       <MKBox
         minHeight="75vh"
         width="100%"

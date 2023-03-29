@@ -81,6 +81,9 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     // Call the displayMobileNavbar function to set the state with the initial value.
     displayMobileNavbar();
 
+   
+  
+
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);

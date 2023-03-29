@@ -18,19 +18,48 @@ import DefaultNavbar from "../../../examples/Navbars/DefaultNavbar";
 
 // Material Kit 2 React page layout routes
 import routes from "../../../routes";
+import { useNavigate } from 'react-router-dom';
 
 // Images
 import bgImage from "../../../assets/images/bg-sign-in-basic.jpeg";
 
+
+
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleSignIn = () => {
+    // Check if username and password are correct
+    if (formData.username === "admin" && formData.password === "admin") {
+      // Redirect user to dashboard
+      // history.push("/pages/admin-dashboard/dashboard");
+      navigate("/pages/admin-dashboard/dashboard");
+    } else if (formData.username === "guest" && formData.password === "admin") {
+      // Redirect user to dashboard
+      // history.push("/pages/admin-dashboard/dashboard");
+      navigate("/pages/admin-dashboard/dashboard");
+    } else {
+      // Display error message
+      alert("Incorrect username or password. Please try again..");
+    }
+  };
+
+  const homeRoutes = routes.filter((route) => {
+    return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+  });
 
   return (
     <>
       { <DefaultNavbar
-        routes={routes}
+        routes={homeRoutes}
         transparent
         light
       /> }
@@ -75,10 +104,10 @@ function SignInBasic() {
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
                   <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
+                    <MKInput type="username" label="username" onChange={handleInputChange} name="username" fullWidth />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
+                    <MKInput type="password" label="password" onChange={handleInputChange}  name="password"  fullWidth />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -93,7 +122,7 @@ function SignInBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
+                    <MKButton variant="gradient" onClick={handleSignIn} color="info" fullWidth >
                       sign in
                     </MKButton>
                   </MKBox>
