@@ -71,6 +71,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
+ 
+   routes =  routes.filter((route) => {
+    return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
+  });
 
   const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
     <DefaultNavbarDropdown
