@@ -24,6 +24,7 @@ import CenteredBlogCard from "../../examples/Cards/BlogCards/CenteredBlogCard";
 // Routes
 import routes from "../../routes";
 import footerRoutes from "../../footer.routes";
+import { useState, useEffect } from "react";
 
 // Images
 import bgImage from "../../assets/images/bg-presentation.jpg";
@@ -163,6 +164,15 @@ FilledInfoCard.propTypes = {
 // });
 
 function Presentation() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://ests-api.herokuapp.com/species') 
+      .then(response => response.json())
+      .then(data => setPosts(data));
+  }, []);
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
@@ -248,15 +258,21 @@ function Presentation() {
             </Grid>
           </Grid>
         </Container> */}
-        <MKBox pt={5} pb={3}>
-          <Container>
-            <Grid container spacing={3}>
-              <Grid item xs={12} lg={4}>
+        
+         
+          
+
+            {posts.map((post, index) => (
+          <div key={index} >
+            <MKBox pt={5} pb={3}>
+            <Container>
+              <Grid container spacing={3}>
+           <Grid item xs={12} lg={4}>
                 <CenteredBlogCard
-                  image="https://www.micato.com/wp-content/uploads/2021/03/micatosafaris_38415367-2048x1365.jpg"
-                  sx={{ height: 250 }}
-                  title="Leopard"
-                  description="The leopard is a large carnivorous cat found in forests, mountains, and grasslands across Africa. They are known for their stealthy behavior and spotted coat pattern."
+                  image={post.image_url}
+                  sx={{ height: 100 }}
+                  title={post.name}
+                  description={post.description}
                   action={{
                     type: "internal",
                     route: "#",
@@ -265,37 +281,11 @@ function Presentation() {
                   }}
                 />
               </Grid>
-              <Grid item xs={12} lg={4}>
-                <CenteredBlogCard
-                  image="https://www.awf.org/sites/default/files/styles/horizontal_image/public/2020-04/SpeciesPage_AfricanBuffalo03_02_Solutions.jpg?h=05d4a2d9&itok=TlJ2RZV1"
-                  sx={{ height: 250 }}
-                  title="African Buffalo"
-                  description="The African buffalo is a large herbivorous mammal found in grasslands and savannas across Africa. They are known for their size, strength, and unpredictable behavior."
-                  action={{
-                    type: "internal",
-                    route: "#",
-                    color: "info",
-                    label: "find out more",
-                  }}
-                />
               </Grid>
-              <Grid item xs={12} lg={4}>
-                <CenteredBlogCard
-                  image="https://www.awf.org/sites/default/files/public%3A//media/news_0/Mountain%20gorilla%20family_1.jpg"
-                  sx={{ height: 250 }}
-                  title="Gorilla"
-                  description="The gorilla is a large primate found in forests and mountains across Africa. They are known for their size, strength, and social behavior."
-                  action={{
-                    type: "internal",
-                    route: "#",
-                    color: "info",
-                    label: "find out more",
-                  }}
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </MKBox>
+              </Container>
+              </MKBox>
+          </div>
+        ))}
         <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
