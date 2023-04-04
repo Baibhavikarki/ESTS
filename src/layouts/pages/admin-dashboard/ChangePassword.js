@@ -32,30 +32,18 @@ function FormSimple() {
           <MKBox width="100%" component="form" method="post" autocomplete="off">
             <MKBox p={3}>
               <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Species" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Animal" fullWidth />
+                <Grid item xs={12}>
+                  <MKInput variant="standard" label="Username" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" label="Name" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Sex" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Age" fullWidth />
+                  <MKInput variant="standard" type="password" label="Current Password" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" label="Health Status" fullWidth />
+                  <MKInput variant="standard" type="password" label="New Password" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" type="file" label="Image URL" fullWidth />
+                  <MKInput variant="standard" type="password" label="Confirm Password" fullWidth />
                 </Grid>
-                {/* <Grid item xs={12}>
-                  <MKInput variant="standard" label="Your Message" multiline fullWidth rows={6} />
-                </Grid> */}
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={2}>
                 <MKButton type="submit" variant="gradient" color="success" fullWidth>

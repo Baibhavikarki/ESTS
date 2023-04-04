@@ -33,29 +33,23 @@ function FormSimple() {
             <MKBox p={3}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Species" fullWidth />
+                  <MKInput variant="standard" label="Location" fullWidth />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Animal" fullWidth />
+                  <MKInput variant="standard" label="Country" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" label="Name" fullWidth />
+                  <MKInput variant="standard" label="GPS Co-ordinates" fullWidth />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Sex" fullWidth />
+                  <MKInput variant="standard" label="Climate" fullWidth />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Age" fullWidth />
+                  <MKInput variant="standard" label="Description" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" label="Health Status" fullWidth />
+                  <MKInput variant="standard" label="Notes" multiline fullWidth rows={6} />
                 </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" type="file" label="Image URL" fullWidth />
-                </Grid>
-                {/* <Grid item xs={12}>
-                  <MKInput variant="standard" label="Your Message" multiline fullWidth rows={6} />
-                </Grid> */}
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={2}>
                 <MKButton type="submit" variant="gradient" color="success" fullWidth>

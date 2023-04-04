@@ -58,7 +58,7 @@ export default function TemporaryDrawer({state, setState, toggleDrawer}) {
         text: 'Settings',
         icon: <SettingsIcon/>,
         component: <Settings/>,
-        route: "/pages/admin-dashboard/change-password"
+        route: "/pages/admin-dashboard/ChangePassword"
     },
     {
         text: 'Logout',

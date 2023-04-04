@@ -14,6 +14,7 @@ import Dashboard from "./layouts/pages/admin-dashboard/Dashboard";
 import Animals from "./layouts/pages/admin-dashboard/Animals";
 import Locations from './layouts/pages/admin-dashboard/Locations';
 import UserRequest from './layouts/pages/admin-dashboard/UserRequest';
+import Settings from './layouts/pages/admin-dashboard/ChangePassword';
 
 const routes = [
     {
@@ -69,6 +70,12 @@ const routes = [
       name: "UserRequest",
       route: "/pages/admin-dashboard/UserRequest",
       component: <UserRequest />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "Settings",
+      route: "/pages/admin-dashboard/ChangePassword",
+      component: <Settings />,
     }
   ];
   
