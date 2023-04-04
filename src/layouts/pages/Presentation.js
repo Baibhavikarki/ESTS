@@ -258,16 +258,13 @@ function Presentation() {
             </Grid>
           </Grid>
         </Container> */}
-        
-        <Container>
-              <Grid container spacing={3}>
-          
 
-            {posts.map((post, index) => (
-          <div key={index} >
-            <MKBox pt={5} pb={3}>
-            
-           <Grid item xs={12} lg={4}>
+        <MKBox pt={5} pb={3}>
+          <Container>
+            <Grid container spacing={3}>
+              {posts.map((post, index) => (
+                <div key={index} >
+                  <Grid item xs={12} lg={4}>
                 <CenteredBlogCard
                   image={post.image_url}
                   sx={{ height: 100 }}
@@ -281,12 +278,16 @@ function Presentation() {
                   }}
                 />
               </Grid>
-              
-              </MKBox>
-          </div>
-        ))}
-        </Grid>
-              </Container>
+                </div>
+              ))}
+            </Grid>
+          </Container>
+        </MKBox>
+        
+         
+          
+
+            
         <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
