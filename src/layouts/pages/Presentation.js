@@ -265,7 +265,7 @@ function Presentation() {
 
             {posts.map((post, index) => (
           <div key={index} >
-            <MKBox pt={5} pb={3}>
+
             
            <Grid item xs={12} lg={4}>
                 <CenteredBlogCard
@@ -282,7 +282,7 @@ function Presentation() {
                 />
               </Grid>
               
-              </MKBox>
+
           </div>
         ))}
         </Grid>
