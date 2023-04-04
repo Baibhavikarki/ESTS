@@ -27,7 +27,7 @@ import bgImage from "../../../assets/images/bg-sign-in-basic.jpeg";
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -36,25 +36,39 @@ function SignInBasic() {
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-  const handleSignIn = () => {
-    // Check if username and password are correct
-    if (formData.username === "admin" && formData.password === "admin") {
-      // Redirect user to dashboard
-      // history.push("/pages/admin-dashboard/dashboard");
-      navigate("/pages/admin-dashboard/dashboard");
-    } else if (formData.username === "guest" && formData.password === "admin") {
-      // Redirect user to dashboard
-      // history.push("/pages/admin-dashboard/dashboard");
-      navigate("/pages/admin-dashboard/dashboard");
-    } else {
-      // Display error message
-      alert("Incorrect username or password. Please try again..");
-    }
-  };
 
-  // const homeRoutes = routes.filter((route) => {
-  //   return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
-  // });
+  function handleSignIn() {
+    fetch('https://ests-api.herokuapp.com/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Parse response body as JSON
+        return response.json();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    })
+    .then(data => {
+      // Access response body as JSON object
+      console.log(data);
+      // Redirect user to dashboard
+      if(data.user.accountType === "admin") {
+        navigate("/pages/admin-dashboard/dashboard");
+      } else {
+        navigate("/pages/user/dashboard");
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert("An error occurred. Please try again later.");
+    });
+  }
+
 
   return (
     <>
@@ -104,7 +118,7 @@ function SignInBasic() {
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
                   <MKBox mb={2}>
-                    <MKInput type="username" label="username" onChange={handleInputChange} name="username" fullWidth />
+                    <MKInput type="email" label="email" onChange={handleInputChange} name="email" fullWidth />
                   </MKBox>
                   <MKBox mb={2}>
                     <MKInput type="password" label="password" onChange={handleInputChange}  name="password"  fullWidth />
