@@ -263,22 +263,20 @@ function Presentation() {
           <Container>
             <Grid container spacing={3}>
               {posts.map((post, index) => (
-                <div key={index} >
-                  <Grid item xs={12} lg={4}>
-                <CenteredBlogCard
-                  image={post.image_url}
-                  sx={{ height: 100 }}
-                  title={post.name}
-                  description={post.description}
-                  action={{
-                    type: "internal",
-                    route: "#",
-                    color: "info",
-                    label: "find out more",
-                  }}
-                />
-              </Grid>
-                </div>
+                <Grid item xs={12} lg={4} key={index}>
+                    <CenteredBlogCard
+                      image={post.image_url}
+                      sx={{ height: 100 }}
+                      title={post.name}
+                      description={post.description}
+                      action={{
+                        type: "internal",
+                        route: "#",
+                        color: "info",
+                        label: "find out more",
+                      }}
+                    />
+                </Grid>
               ))}
             </Grid>
           </Container>
