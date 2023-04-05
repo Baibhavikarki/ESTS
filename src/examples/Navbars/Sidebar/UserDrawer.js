@@ -63,7 +63,7 @@ export default function UserDrawer({state, setState, toggleDrawer}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
         <List>
-        {['ESTS Admin Dashboard'].map((text, index) => (
+        {['ESTS User Dashboard'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
