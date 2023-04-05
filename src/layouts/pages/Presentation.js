@@ -29,6 +29,10 @@ import { useState, useEffect } from "react";
 // Images
 import bgImage from "../../assets/images/bg-presentation.jpg";
 
+const baseUrl = "https://ests-api.herokuapp.com";
+
+// const baseUrl = "http://localhost:8080";
+
 function FilledInfoCard({ variant, color, icon, title, description, action }) {
   const buttonStyles = {
     width: "max-content",
@@ -168,7 +172,7 @@ function Presentation() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('https://ests-api.herokuapp.com/species') 
+    fetch(`${baseUrl}/species`) 
       .then(response => response.json())
       .then(data => setPosts(data));
   }, []);

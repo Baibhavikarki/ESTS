@@ -23,6 +23,9 @@ import { useNavigate } from 'react-router-dom';
 // Images
 import bgImage from "../../../assets/images/bg-sign-in-basic.jpeg";
 
+const baseUrl = "https://ests-api.herokuapp.com";
+
+// const baseUrl = "http://localhost:8080";
 
 
 function SignInBasic() {
@@ -38,7 +41,7 @@ function SignInBasic() {
 
 
   function handleSignIn() {
-    fetch('https://ests-api.herokuapp.com/signin', {
+    fetch(`${baseUrl}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
