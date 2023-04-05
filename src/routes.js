@@ -10,11 +10,16 @@ import AboutUs from "./layouts/pages/landing-pages/AboutUs";
 import ContactUs from "./layouts/pages/landing-pages/ContactUs";
 import SignIn from "./layouts/pages/authentication/SignIn";
 import Home from "./layouts/pages/Presentation";
+
 import Dashboard from "./layouts/pages/admin-dashboard/Dashboard";
 import Animals from "./layouts/pages/admin-dashboard/Animals";
 import Locations from './layouts/pages/admin-dashboard/Locations';
 import UserRequest from './layouts/pages/admin-dashboard/UserRequest';
 import Settings from './layouts/pages/admin-dashboard/ChangePassword';
+
+import UserAnimals from './layouts/pages/user-dashboard/Animals';
+import UserDashboard from './layouts/pages/user-dashboard/Dashboard';
+import UserSettings from './layouts/pages/user-dashboard/ChangePassword';
 
 const routes = [
     {
@@ -76,6 +81,25 @@ const routes = [
       name: "Settings",
       route: "/pages/admin-dashboard/ChangePassword",
       component: <Settings />,
+    }
+    ,
+    {
+      icon: <LockOpenIcon />,
+      name: "animals",
+      route: "/pages/user-dashboard/animals",
+      component: <UserAnimals />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "dashboard",
+      route: "/pages/user-dashboard/dashboard",
+      component: <UserDashboard />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "Settings",
+      route: "/pages/user-dashboard/ChangePassword",
+      component: <UserSettings />,
     }
   ];
   
