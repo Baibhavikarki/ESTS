@@ -63,7 +63,7 @@ function SignInBasic() {
       if(data.user.accountType === "admin") {
         navigate("/pages/admin-dashboard/dashboard");
       } else {
-        navigate("/pages/user/dashboard");
+        navigate("/pages/user-dashboard/dashboard");
       }
     })
     .catch(error => {
