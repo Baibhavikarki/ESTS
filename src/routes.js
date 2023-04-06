@@ -21,6 +21,11 @@ import UserAnimals from './layouts/pages/user-dashboard/Animals';
 import UserDashboard from './layouts/pages/user-dashboard/Dashboard';
 import UserSettings from './layouts/pages/user-dashboard/ChangePassword';
 
+import SpeciesDetails from "./layouts/pages/landing-pages/SpeciesDetails";
+import AnimalDetails from "./layouts/pages/landing-pages/AnimalDetails";
+
+
+
 const routes = [
     {
       icon: <HomeIcon/>,
@@ -100,6 +105,18 @@ const routes = [
       name: "Settings",
       route: "/pages/user-dashboard/ChangePassword",
       component: <UserSettings />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "species details",
+      route: "/pages/species-details/:id",
+      component: <SpeciesDetails />,
+    },
+    {
+      icon: <LockOpenIcon />,
+      name: "animal details",
+      route: "/pages/animal-details/:id",
+      component: <AnimalDetails />,
     }
   ];
   

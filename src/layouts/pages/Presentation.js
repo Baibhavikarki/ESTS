@@ -229,40 +229,6 @@ function Presentation() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        {/* <Container>
-          <Grid container spacing={3}>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                variant="gradient"
-                color="warning"
-                title="Pollution"
-                description="Ecosystems can be exposed to many types of pollutants. From agricultural and industrial runoff to microplastics, contaminants can harm or kill plants and wildlife."
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                variant="gradient"
-                color="warning"
-                title="Climate Change"
-                description="In Canada, the rate of warming has increased to nearly double the global average. A rapidly changing climate can make it more difficult for species to find food or migrate."
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                variant="gradient"
-                color="warning"
-                title="Unsustainable Harvest"
-                description="Over-exploitation of wildlife can be direct, such as unsustainable hunting, harvesting and poaching, or indirect, including bycatch. Some even prey on native species."
-                action={{
-                    type: "external",
-                    route: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
-                    label: "Read more",
-                  }} 
-              />
-            </Grid>
-          </Grid>
-        </Container> */}
-
         <MKBox pt={5} pb={3}>
           <Container>
             <Grid container spacing={3}>
@@ -275,7 +241,7 @@ function Presentation() {
                       description={post.description}
                       action={{
                         type: "internal",
-                        route: "#",
+                        route: `/pages/species-details/${post.species_id}`,
                         color: "info",
                         label: "find out more",
                       }}
@@ -286,10 +252,6 @@ function Presentation() {
           </Container>
         </MKBox>
         
-         
-          
-
-            
         <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
