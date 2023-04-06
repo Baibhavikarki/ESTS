@@ -244,6 +244,14 @@ function CustomPaginationActionsTable() {
 }
 
 function Animals() {
+  var accountType = sessionStorage.getItem("accountType");
+  if(accountType === "admin")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
   return (
     <>
       <ButtonAppBar></ButtonAppBar>

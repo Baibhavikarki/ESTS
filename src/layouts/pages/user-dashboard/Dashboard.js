@@ -149,6 +149,15 @@ FilledInfoCard.propTypes = {
 
 
 function FormSimple() {
+  var accountType = sessionStorage.getItem("accountType");
+  var userName = sessionStorage.getItem("userName");
+  if(accountType === "user")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
   //const [checked, setChecked] = useState(true);
 
   return (
@@ -156,7 +165,7 @@ function FormSimple() {
       <Container>
         <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
           <MKTypography variant="h3" mb={1}>
-            Dashboard
+            Welcome {userName}
           </MKTypography>
         </Grid>
 

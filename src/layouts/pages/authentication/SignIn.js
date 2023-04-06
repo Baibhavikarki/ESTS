@@ -25,7 +25,7 @@ import bgImage from "../../../assets/images/bg-sign-in-basic.jpeg";
 
 const baseUrl = "https://ests-api.herokuapp.com";
 
-// const baseUrl = "http://localhost:8080";
+//const baseUrl = "http://localhost:8080";
 
 
 function SignInBasic() {
@@ -59,6 +59,10 @@ function SignInBasic() {
     .then(data => {
       // Access response body as JSON object
       console.log(data);
+      const accountType = data.user.accountType;
+      const userName = data.user.first_name;
+      sessionStorage.setItem("accountType", accountType);
+      sessionStorage.setItem("userName", userName);
       // Redirect user to dashboard
       if(data.user.accountType === "admin") {
         navigate("/pages/admin-dashboard/dashboard");

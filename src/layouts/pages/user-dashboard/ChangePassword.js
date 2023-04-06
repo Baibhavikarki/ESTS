@@ -59,6 +59,14 @@ function FormSimple() {
 }
 
 function Animals() {
+  var accountType = sessionStorage.getItem("accountType");
+  if(accountType === "user")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
   return (
     <>
       <ButtonAppBar></ButtonAppBar>

@@ -27,6 +27,19 @@ import { textAlign } from '@mui/system';
 
 export default function TemporaryDrawer({state, setState, toggleDrawer}) {
 
+  function LogOut() {
+    sessionStorage.clear();
+  }
+
+  var accountType = sessionStorage.getItem("accountType");
+  if(accountType === "admin")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
+
     //const {history} = setState;
    
   const list = (anchor) => {
@@ -63,7 +76,8 @@ export default function TemporaryDrawer({state, setState, toggleDrawer}) {
     {
         text: 'Logout',
         icon: <LogoutIcon/>,
-        route: '/pages/presentation'
+        component: () => <LogOut />,
+        route: "/pages/presentation",
     }]; 
 
 

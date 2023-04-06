@@ -22,6 +22,19 @@ import { NavLink } from 'react-router-dom';
 import { textAlign } from '@mui/system';
 
 export default function UserDrawer({state, setState, toggleDrawer}) {
+
+  function LogOut(){
+    sessionStorage.removeItem('accountType');
+  }
+
+  var accountType = sessionStorage.getItem("accountType");
+  if(accountType === "user")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
    
   const list = (anchor) => {
     const itemList = [{
@@ -45,7 +58,8 @@ export default function UserDrawer({state, setState, toggleDrawer}) {
     {
         text: 'Logout',
         icon: <LogoutIcon/>,
-        route: '/pages/presentation'
+        component: () => <LogOut />,
+        route: "/pages/presentation",
     }]; 
 
 

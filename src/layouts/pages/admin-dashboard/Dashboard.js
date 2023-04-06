@@ -151,12 +151,22 @@ FilledInfoCard.propTypes = {
 function FormSimple() {
   //const [checked, setChecked] = useState(true);
 
+  var accountType = sessionStorage.getItem("accountType");
+  var userName = sessionStorage.getItem("userName");
+  if(accountType === "admin")
+  {
+    // Do nothing
+  }else
+  {
+    alert("You are not authorised to visit this page"); return false;
+  }
+
   return (
     <MKBox component="section" py={12}>
       <Container>
         <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
           <MKTypography variant="h3" mb={1}>
-            Dashboard
+            Welcome {userName}
           </MKTypography>
         </Grid>
 

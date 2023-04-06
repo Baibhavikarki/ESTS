@@ -31,7 +31,7 @@ import bgImage from "../../assets/images/bg-presentation.jpg";
 
 const baseUrl = "https://ests-api.herokuapp.com";
 
-// const baseUrl = "http://localhost:8080";
+//const baseUrl = "http://localhost:8080";
 
 function FilledInfoCard({ variant, color, icon, title, description, action }) {
   const buttonStyles = {
@@ -168,6 +168,8 @@ FilledInfoCard.propTypes = {
 // });
 
 function Presentation() {
+
+  sessionStorage.clear();
 
   const [posts, setPosts] = useState([]);
 
