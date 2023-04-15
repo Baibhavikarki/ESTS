@@ -45,11 +45,9 @@ function FormSimple() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Body", selectedSpecies)
-
     const animalData = {
       species_id: selectedSpecies.species_id,
-      animal_id: 11111,
+      animal_id: animalID,
       name: name,
       sex: sex,
       age: age,
@@ -58,8 +56,6 @@ function FormSimple() {
       species_name: selectedSpecies.name,
       is_approved: "YES"
     };
-
-    console.log("Body animalData", animalData)
 
 
     fetch(`${baseUrl}/animal`, {

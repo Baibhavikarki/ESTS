@@ -3,7 +3,8 @@
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
 import MKInput from "../../../components/MKInput";
@@ -16,9 +17,101 @@ import footerRoutes from "../../../footer.routes";
 // Material Kit 2 React examples
 import DefaultFooter from "../../../examples/Footers/DefaultFooter";
 import ButtonAppBar from "../../../examples/Navbars/Sidebar/AdminNavbar";
+import { useState, useEffect } from "react";
+
+const baseUrl = "https://ests-api.herokuapp.com";
+// const baseUrl = "http://localhost:8080";
 
 function FormSimple() {
   //const [checked, setChecked] = useState(true);
+
+  const [posts, setPosts] = useState([]);
+  const [selectedAnimal, setSelectedAnimal] = useState("");
+
+  const [location, setLocation] = useState("");
+  const [country, setCountry] = useState("");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+  const [climate, setClimate] = useState("");
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    fetch(`${baseUrl}/individuals
+    `)
+      .then(response => response.json())
+      .then(data => { console.log(data); setPosts(data) });
+  }, []);
+
+
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const handleCountryChange = (event) => {
+    setCountry(event.target.value);
+  };
+
+  const handleLatitudeChange = (event) => {
+    setLatitude(event.target.value);
+  };
+
+  const handleLongitudeChange = (event) => {
+    setLongitude(event.target.value);
+  };
+
+  const handleClimateChange = (event) => {
+    setClimate(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
+
+
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const locationData = {
+        Location: location,
+        country: country,
+        location: {
+            type: "Point",
+            coordinates: [parseFloat(latitude), parseFloat(longitude)]
+        },
+        climate: climate,
+        description: description,
+        animal_id: selectedAnimal.animal_id,
+        species: selectedAnimal.species_name,
+        is_approved: "YES"
+    };
+
+
+    fetch(`${baseUrl}/location`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(locationData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Location added successfully:", data);
+        // clear form fields
+        setSelectedAnimal("");
+        setLocation("");
+        setCountry("");
+        setLatitude("");
+        setLongitude("");
+        setClimate("");
+        setDescription("");
+      })
+      .catch((error) => {
+        console.error("Error adding location:", error);
+      });
+  };
 
   return (
     <MKBox component="section" py={12}>
@@ -33,26 +126,38 @@ function FormSimple() {
             <MKBox p={3}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Location" fullWidth />
+                  <MKInput variant="standard" label="Location" fullWidth value={location} onChange={handleLocationChange}/>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Country" fullWidth />
+                  <MKInput variant="standard" label="Country" fullWidth  value={country} onChange={handleCountryChange}/>
                 </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" label="GPS Co-ordinates" fullWidth />
+             
+                <Grid item xs={12} md={6}>
+                  <MKInput variant="standard" label="Latitude" fullWidth  value={latitude} onChange={handleLatitudeChange}/>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Climate" fullWidth />
+                  <MKInput variant="standard" label="Longitude" fullWidth  value={longitude} onChange={handleLongitudeChange}/>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Description" fullWidth />
+                  <MKInput variant="standard" label="Climate" fullWidth value={climate} onChange={handleClimateChange}/>
                 </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" label="Notes" multiline fullWidth rows={6} />
+                <Grid item xs={12} md={6}>
+                  <MKInput variant="standard" label="Description" fullWidth value={description} onChange={handleDescriptionChange}/>
                 </Grid>
+                <Grid item xs={12} md={6}>
+             <Select variant="standard" label="Species" fullWidth
+               value={selectedAnimal}
+               onChange={(event) => setSelectedAnimal(event.target.value)}>
+               {posts.map((post, index) => (
+                 <MenuItem key={post.animal_id} value={post}>
+                   {post.name} - {post.species_name}
+                 </MenuItem>
+               ))}
+             </Select>
+           </Grid>
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={2}>
-                <MKButton type="submit" variant="gradient" color="success" fullWidth>
+                <MKButton type="submit" variant="gradient" color="success" fullWidth onClick={handleSubmit}>
                   Submit
                 </MKButton>
               </Grid>
