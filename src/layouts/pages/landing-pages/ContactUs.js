@@ -1,10 +1,10 @@
 // @mui material components
 import Grid from "@mui/material/Grid";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
 
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
-import MKInput from "../../../components/MKInput";
-import MKButton from "../../../components/MKButton";
 import MKTypography from "../../../components/MKTypography";
 
 // Material Kit 2 React examples
@@ -80,46 +80,15 @@ function ContactUs() {
               </MKBox>
               <MKBox p={3}>
                 <MKTypography variant="body2" color="text" mb={3}>
-                  For further questions, please email us at 
-                  endangered_species@teampanda.com or contact using our contact form.
+                  <EmailIcon/> endangered_species@teampanda.com.
                 </MKTypography>
-                <MKBox width="100%" component="form" method="post" autocomplete="off">
-                  <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                      <MKInput
-                        variant="standard"
-                        label="Full Name"
-                        InputLabelProps={{ shrink: true }}
-                        fullWidth
-                      />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <MKInput
-                        type="email"
-                        variant="standard"
-                        label="Email"
-                        InputLabelProps={{ shrink: true }}
-                        fullWidth
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <MKInput
-                        variant="standard"
-                        label="What can we help you?"
-                        placeholder="Describe your problem in at least 250 characters"
-                        InputLabelProps={{ shrink: true }}
-                        multiline
-                        fullWidth
-                        rows={6}
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                    <MKButton type="submit" variant="gradient" color="info">
-                      Send Message
-                    </MKButton>
-                  </Grid>
-                </MKBox>
+                <MKTypography variant="body2" color="text" mb={3}>
+                <LocationOnIcon/><br/>
+                Endangered Species Tracking System<br/>
+                1750 Finch Avenue East<br/>
+                Toronto, Ontario, Canada<br/>
+                M2J 2X5
+                </MKTypography>
               </MKBox>
             </MKBox>
           </Grid>
