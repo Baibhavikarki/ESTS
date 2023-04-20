@@ -26,12 +26,12 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
+//import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-const baseUrl = "https://ests-api.herokuapp.com";
-// const baseUrl = "http://localhost:8080";
+//const baseUrl = "https://ests-api.herokuapp.com";
+const baseUrl = "http://localhost:8080";
 
 const AnimalDetails = () => {
   const [sightings, setSpeciesLocations] = useState(null);
@@ -98,17 +98,15 @@ const AnimalDetails = () => {
           <Container>
             <TableContainer component={Paper} sx={{ maxWidth: '100%', margin: 'auto' }}>
               <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Location</TableCell>
-                    <TableCell>Country</TableCell>
-                    <TableCell>Climate</TableCell>
-                    <TableCell>Observer</TableCell>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Description</TableCell>
-                  </TableRow>
-                </TableHead>
                 <TableBody>
+                  <TableRow>
+                    <TableCell component="th" scope="row"><h4>Location</h4></TableCell>
+                    <TableCell><h4>Country</h4></TableCell>
+                    <TableCell><h4>Climate</h4></TableCell>
+                    <TableCell><h4>Observer</h4></TableCell>
+                    <TableCell><h4>Date</h4></TableCell>
+                    <TableCell><h4>Description</h4></TableCell>
+                  </TableRow>
                   {sightings &&
                     sightings.map((post, index) => (
                       <TableRow key={index}>
