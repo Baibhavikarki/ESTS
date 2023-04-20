@@ -28,7 +28,7 @@ import MKBox from "../../../../components/MKBox";
 import MKTypography from "../../../../components/MKTypography";
 import MKButton from "../../../../components/MKButton";
 
-function CenteredBlogCard({ image, title, description, action }) {
+function CenteredBlogCard({ image, title, description, health, sex, age, action }) {
   return (
     <Card>
       <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
@@ -63,7 +63,22 @@ function CenteredBlogCard({ image, title, description, action }) {
         </MKTypography>
         <MKBox mt={1} mb={3}>
           <MKTypography variant="body2" component="p" color="text">
-            {description}
+             {description}
+          </MKTypography>
+        </MKBox>
+        <MKBox mt={1} mb={3}>
+          <MKTypography variant="body2" component="p" color="text">
+            {health}
+          </MKTypography>
+        </MKBox>
+        <MKBox mt={1} mb={3}>
+          <MKTypography variant="body2" component="p" color="text">
+            {sex}
+          </MKTypography>
+        </MKBox>
+        <MKBox mt={1} mb={3}>
+          <MKTypography variant="body2" component="p" color="text">
+            {age}
           </MKTypography>
         </MKBox>
         {action.type === "external" ? (

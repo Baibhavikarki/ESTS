@@ -19,8 +19,6 @@ import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
-// Images
-import bgImage from "../../../assets/images/bg-presentation.jpg";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -31,7 +29,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const baseUrl = "https://ests-api.herokuapp.com";
-//const baseUrl = "http://localhost:8080";
+// const baseUrl = "http://localhost:8080";
 
 const AnimalDetails = () => {
   const [sightings, setSpeciesLocations] = useState(null);
@@ -50,7 +48,7 @@ const AnimalDetails = () => {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: `url(https://1.bp.blogspot.com/-UUXaK5GCj-k/UcsKJRMgkVI/AAAAAAAACfM/sePP_H08JTQ/s1600/1.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           display: "grid",
@@ -71,7 +69,7 @@ const AnimalDetails = () => {
                 },
               })}
             >
-              Endangered Species Tracking System{" "}
+              List of sightings {" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -101,21 +99,25 @@ const AnimalDetails = () => {
                 <TableBody>
                   <TableRow>
                     <TableCell component="th" scope="row"><h4>Location</h4></TableCell>
+                   <TableCell><h4>Behavior</h4></TableCell>
                     <TableCell><h4>Country</h4></TableCell>
                     <TableCell><h4>Climate</h4></TableCell>
-                    <TableCell><h4>Observer</h4></TableCell>
-                    <TableCell><h4>Date</h4></TableCell>
                     <TableCell><h4>Description</h4></TableCell>
+                    <TableCell><h4>Coordinates</h4></TableCell>
+                    <TableCell><h4>Observer</h4></TableCell>
+                    <TableCell><h4>Date of Sighting</h4></TableCell>
                   </TableRow>
                   {sightings &&
                     sightings.map((post, index) => (
                       <TableRow key={index}>
                         <TableCell>{post.Location}</TableCell>
-                        <TableCell>{post.description}</TableCell>
+                        <TableCell>{post.behavior}</TableCell>
+                        <TableCell>{post.country}</TableCell>
                         <TableCell>{post.climate}</TableCell>
+                        <TableCell>{post.description}</TableCell>
+                        <TableCell>{post.location.coordinates[0]} {post.location.coordinates[1]}</TableCell>
                         <TableCell>{post.observer}</TableCell>
                         <TableCell>{post.date}</TableCell>
-                        <TableCell>{post.description}</TableCell>
                       </TableRow>
                     ))}
                 </TableBody>

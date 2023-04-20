@@ -39,6 +39,11 @@ const SpeciesDetails = () => {
   }, [id]);
 
 
+  if (species === null) {
+    // Display a loading message or spinner
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
@@ -46,7 +51,7 @@ const SpeciesDetails = () => {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: `url(${species[0].image_url})`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           display: "grid",
@@ -67,7 +72,7 @@ const SpeciesDetails = () => {
                 },
               })}
             >
-              Endangered Species Tracking System{" "}
+              {species[0].species_name}{" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -100,7 +105,10 @@ const SpeciesDetails = () => {
                       image={post.image_url}
                       sx={{ height: 100 }}
                       title={post.name}
-                      description={post.species_name}
+                      description={''}
+                      health={"Health: "+ post.health_status}
+                      age={"Age: "+ post.age}
+                      sex={"Sex: "+ post.sex}
                       action={{
                         type: "internal",
                         route: `/pages/animal-details/${post.animal_id}`,

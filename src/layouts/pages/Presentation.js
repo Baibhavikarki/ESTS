@@ -26,12 +26,11 @@ import routes from "../../routes";
 import footerRoutes from "../../footer.routes";
 import { useState, useEffect } from "react";
 
-// Images
-import bgImage from "../../assets/images/bg-presentation.jpg";
+
 
 const baseUrl = "https://ests-api.herokuapp.com";
 
-//const baseUrl = "http://localhost:8080";
+// const baseUrl = "http://localhost:8080";
 
 function FilledInfoCard({ variant, color, icon, title, description, action }) {
   const buttonStyles = {
@@ -186,7 +185,7 @@ function Presentation() {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: `url(https://media.istockphoto.com/id/1221551995/photo/wildlife-conservation-day-wild-animals-to-the-home-or-wildlife-protection.jpg?s=170667a&w=0&k=20&c=RHGi5UiYTa9QsZzb83zC4aPhBopvqOhLyURANsMVJXw=)`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           display: "grid",
