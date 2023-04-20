@@ -30,8 +30,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-//const baseUrl = "https://ests-api.herokuapp.com";
-const baseUrl = "http://localhost:8080";
+const baseUrl = "https://ests-api.herokuapp.com";
+//const baseUrl = "http://localhost:8080";
 
 const AnimalDetails = () => {
   const [sightings, setSpeciesLocations] = useState(null);
