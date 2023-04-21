@@ -8,7 +8,7 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "../../../components/MKBox";
 import MKTypography from "../../../components/MKTypography";
-// import MKButton from "../../../components/MKButton";
+import FilledInfoCard from "../../../examples/Cards/InfoCards/FilledInfoCard";
 
 // Routes
 import routes from "../../../routes";
@@ -159,6 +159,18 @@ DefaultInfoCard.propTypes = {
 //   return route.name === "home" || route.name === "about us" || route.name === "contact us" || route.name === "sign-in/sign-up";
 // });
 
+function AboutText(){
+  return (<p>
+    Welcome to the Endangered Species Tracking System website! Our mission is to provide a comprehensive platform for tracking endangered species across the globe.<br/><br/>
+
+We understand the critical need to protect and conserve endangered species, which is why we have created a user-friendly system that allows users to monitor the status and location of these species. Our team of experts is dedicated to collecting and analyzing data on endangered species, making it easier for conservationists, researchers, and the general public to access and use this information.<br/><br/>
+
+At the Endangered Species Tracking System, we believe that everyone has a role to play in protecting endangered species. By providing accurate and up-to-date information on these animals, we hope to increase awareness and encourage action towards their conservation.<br/><br/>
+
+Thank you for visiting our website and for your interest in protecting endangered species. We are committed to providing you with the best possible information and tools to support your conservation efforts.<br/><br/>
+  </p>);
+}
+
 function AboutUs() {
   return (
     <>
@@ -261,6 +273,7 @@ function AboutUs() {
           </Grid>
         </Container>
       </MKBox>
+
       <Card
         sx={{
           p: 2,
@@ -270,55 +283,31 @@ function AboutUs() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        {/* <MKBox component="section" py={12}>
-          <Container>
-            <Grid container spacing={3} alignItems="center">
-              <Grid item xs={12} lg={6}>
-                <Grid container justifyContent="flex-start">
-                  <Grid item xs={12} md={6}>
-                    <MKBox mb={5}>
-                      <DefaultInfoCard
-                        icon="public"
-                        title="Fully integrated"
-                        description="We get insulted by others, lose trust for those We get back freezes"
-                      />
-                    </MKBox>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <MKBox mb={5}>
-                      <DefaultInfoCard
-                        icon="payments"
-                        title="Payments functionality"
-                        description="We get insulted by others, lose trust for those We get back freezes"
-                      />
-                    </MKBox>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <MKBox mb={{ xs: 5, md: 0 }}>
-                      <DefaultInfoCard
-                        icon="apps"
-                        title="Prebuilt components"
-                        description="We get insulted by others, lose trust for those We get back freezes"
-                      />
-                    </MKBox>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <MKBox mb={{ xs: 5, md: 0 }}>
-                      <DefaultInfoCard
-                        icon="3p"
-                        title="Improved platform"
-                        description="We get insulted by others, lose trust for those We get back freezes"
-                      />
-                    </MKBox>
-                  </Grid>
-                </Grid>
-              </Grid>
+        <MKBox component="section" py={2}>
+        <Container>
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} lg={12}>
+            <Grid container justifyContent="flex-start">
+              <FilledInfoCard
+                variant="gradient"
+                color="dark"
+                icon=""
+                title="About Us"
+                description="Welcome to the Endangered Species Tracking System website! Our mission is to provide a comprehensive platform for tracking endangered species across the globe.
+
+                We understand the critical need to protect and conserve endangered species, which is why we have created a user-friendly system that allows users to monitor the status and location of these species. Our team of experts is dedicated to collecting and analyzing data on endangered species, making it easier for conservationists, researchers, and the general public to access and use this information.
+                
+                At the Endangered Species Tracking System, we believe that everyone has a role to play in protecting endangered species. By providing accurate and up-to-date information on these animals, we hope to increase awareness and encourage action towards their conservation.
+                
+                Thank you for visiting our website and for your interest in protecting endangered species. We are committed to providing you with the best possible information and tools to support your conservation efforts."
+              />
             </Grid>
-          </Container>
-        </MKBox> */}
 
-        {/** Infomation Ends */}
+            </Grid>
 
+          </Grid>
+        </Container>
+        </MKBox>
         <MKBox
           component="section"
           variant="gradient"
@@ -334,10 +323,6 @@ function AboutUs() {
                 <MKTypography variant="h3" color="white">
                   The Executive Team
                 </MKTypography>
-                {/* <MKTypography variant="body2" color="white" opacity={0.8}>
-                  There&apos;s nothing I really wanted to do in life that I
-                  wasn&apos;t able to get good at. That&apos;s my skill.
-                </MKTypography> */}
               </Grid>
             </Grid>
             <Grid container spacing={3}>
