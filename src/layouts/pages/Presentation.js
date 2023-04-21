@@ -185,7 +185,7 @@ function Presentation() {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(https://media.istockphoto.com/id/1221551995/photo/wildlife-conservation-day-wild-animals-to-the-home-or-wildlife-protection.jpg?s=170667a&w=0&k=20&c=RHGi5UiYTa9QsZzb83zC4aPhBopvqOhLyURANsMVJXw=)`,
+          backgroundImage: `url(https://imageio.forbes.com/specials-images/imageserve/603db59461aa7ca98f637ce5/Wildlife-conservation-day--wildlife-home-threatened-by-humans--Protecting-wildlife-/960x0.jpg?format=jpg&width=960)`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           display: "grid",
