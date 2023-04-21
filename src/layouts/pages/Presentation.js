@@ -26,7 +26,8 @@ import routes from "../../routes";
 import footerRoutes from "../../footer.routes";
 import { useState, useEffect } from "react";
 
-
+// Images
+import bgImage from "../../assets/images/bg-about.jpg";
 
 const baseUrl = "https://ests-api.herokuapp.com";
 
@@ -185,9 +186,16 @@ function Presentation() {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(https://imageio.forbes.com/specials-images/imageserve/603db59461aa7ca98f637ce5/Wildlife-conservation-day--wildlife-home-threatened-by-humans--Protecting-wildlife-/960x0.jpg?format=jpg&width=960)`,
+          backgroundImage: ({
+            functions: { linearGradient, rgba },
+            palette: { gradients },
+          }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.6),
+              rgba(gradients.dark.state, 0.6)
+            )}, url(${bgImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: "center",
           display: "grid",
           placeItems: "center",
         }}
